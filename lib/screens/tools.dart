@@ -16,82 +16,84 @@ class ToolsPage extends StatelessWidget {
         body: Container(
       width: double.infinity,
       decoration: backgroundImage(),
-      child: Column(
-        children: [
-          MainTitle('Menu'),
-          SizedBox(
-            height: 100.h,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pushNamed('history');
-                },
-                child: CardWidget2(
-                    widget: Icon(
-                      Icons.history,
-                      size: 60.sp,
-                      color: Color.fromRGBO(255, 61, 92, 0.8),
-                    ),
-                    text: 'History',
-                    height: 120.h,
-                    width: 150.w),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pushNamed('emergency');
-                },
-                child: CardWidget2(
-                    widget: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: Icon(
-                        MyFlutter.telephone,
-                        size: 40.sp,
+      child: Center(
+        child: Column(
+          children: [
+            MainTitle('Menu'),
+            SizedBox(
+              height: 100.h,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('history');
+                  },
+                  child: CardWidget2(
+                      widget: Icon(
+                        Icons.history,
+                        size: 60.sp,
                         color: Color.fromRGBO(255, 61, 92, 0.8),
                       ),
-                    ),
-                    text: 'Emergency',
-                    height: 120.h,
-                    width: 150.w),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pushNamed('Bmi');
-                },
-                child: CardWidget2(
-                    widget: Icon(
-                      MyFlutter.bmi,
-                      size: 60.sp,
-                      color: Color.fromRGBO(255, 61, 92, 0.8),
-                    ),
-                    text: 'BMI',
-                    height: 120.h,
-                    width: 150.w),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pushNamed('friends');
-                },
-                child: CardWidget2(
-                    widget: Icon(
-                      MyFlutter.friend,
-                      size: 60.sp,
-                      color: Color.fromRGBO(255, 61, 92, 0.8),
-                    ),
-                    text: 'Friends',
-                    height: 120.h,
-                    width: 150.w),
-              ),
-            ],
-          )
-        ],
+                      text: 'History',
+                      height: 120.h,
+                      width: 150.w),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('emergency');
+                  },
+                  child: CardWidget2(
+                      widget: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: Icon(
+                          MyFlutter.telephone,
+                          size: 40.sp,
+                          color: Color.fromRGBO(255, 61, 92, 0.8),
+                        ),
+                      ),
+                      text: 'Emergency',
+                      height: 120.h,
+                      width: 150.w),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('bmi');
+                  },
+                  child: CardWidget2(
+                      widget: Icon(
+                        MyFlutter.bmi,
+                        size: 60.sp,
+                        color: Color.fromRGBO(255, 61, 92, 0.8),
+                      ),
+                      text: 'BMI',
+                      height: 120.h,
+                      width: 150.w),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('friends');
+                  },
+                  child: CardWidget2(
+                      widget: Icon(
+                        MyFlutter.friend,
+                        size: 60.sp,
+                        color: Color.fromRGBO(255, 61, 92, 0.8),
+                      ),
+                      text: 'Friends',
+                      height: 120.h,
+                      width: 150.w),
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     ));
   }

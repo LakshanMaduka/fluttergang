@@ -15,6 +15,7 @@ class FormScreen extends StatefulWidget {
 }
 
 class _FormScreenState extends State<FormScreen> {
+  var _isLoading = false;
   // User? user = FirebaseAuth.instance.currentUser;
   final _auth = FirebaseAuth.instance;
 
@@ -32,8 +33,12 @@ class _FormScreenState extends State<FormScreen> {
       String height,
       String weight,
       String bloodgroup,
-      File pickImage) async {
+      File pickImage,
+      BuildContext ctx) async {
     try {
+      setState(() {
+        _isLoading = true;
+      });
       UserCredential userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
 
@@ -60,13 +65,24 @@ class _FormScreenState extends State<FormScreen> {
         'bloodgroup': bloodgroup,
         'imgUrl': url,
       });
+      setState(() {
+        _isLoading = false;
+      });
     } catch (e) {
-      print(e);
+      ScaffoldMessenger.of(ctx).showSnackBar(
+        const SnackBar(
+          content: Text('Pleas pick an image'),
+        ),
+      );
+
+      setState(() {
+        _isLoading = false;
+      });
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return RegForm(_submitAuthForm);
+    return RegForm(_submitAuthForm, _isLoading);
   }
 }

@@ -5,6 +5,7 @@ import 'package:bloodsquad/form/form_screen.dart';
 import 'package:bloodsquad/google_sign_in.dart';
 
 import 'package:bloodsquad/login.dart';
+import 'package:bloodsquad/onboard/onboard.dart';
 
 import 'package:bloodsquad/screens/home.dart';
 import 'package:bloodsquad/screens/news.dart';
@@ -21,16 +22,27 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 
 import 'package:flutter/material.dart';
 import 'package:bloodsquad/widgets/loginform.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/services.dart';
 
 Future<void> backgroundHandler(RemoteMessage message) async {
   print(message.data.toString());
   print(message.notification.title);
 }
 
+int isviewed;
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   FirebaseMessaging.onBackgroundMessage(backgroundHandler);
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  ));
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  isviewed = prefs.getInt('onBoard');
+
   runApp(MyHomePage());
 }
 
@@ -99,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Text('Something Went Wrong'),
                       );
                     } else {
-                      return LoginPage();
+                      return isviewed != 0 ? OnBoard() : LoginPage();
                     }
                   }),
             ),

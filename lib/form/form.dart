@@ -5,19 +5,20 @@ import 'package:bloodsquad/widgets/imagewidget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class RegForm extends StatefulWidget {
-  RegForm(this.submitFn);
-
+  RegForm(this.submitFn, this._isLoadin);
+  final bool _isLoadin;
   final void Function(
       String name,
       String email,
       String password,
       // String confirmPassword,
-      String istrict,
       String contactNo,
+      String district,
       String height,
       String weight,
       String bloodgroop,
-      File pickImage) submitFn;
+      File pickImage,
+      BuildContext ctx) submitFn;
 
   @override
   _RegFormState createState() => _RegFormState();
@@ -29,9 +30,9 @@ class _RegFormState extends State<RegForm> {
   String? _name;
   String? _email;
   // String? _city;
-  String? _district;
-  String? _contactNo;
   String? _password;
+  String? _contactNo;
+  String? _district;
   // String? _confirmPassword;
   String? _height;
   String? _weight;
@@ -51,14 +52,15 @@ class _RegFormState extends State<RegForm> {
       widget.submitFn(
           _name!.trim(),
           _email!.trim(),
+          _password!.trim(),
           // _city!.trim(),
           _district!.trim(),
           _contactNo!.trim(),
-          _password!.trim(),
           _height!.trim(),
           _weight!.trim(),
           _bloodgroop!.trim(),
-          _pickedImage!);
+          _pickedImage!,
+          context);
     }
   }
 
@@ -154,12 +156,15 @@ class _RegFormState extends State<RegForm> {
                                 Padding(
                                     padding: EdgeInsets.all(8),
                                     child: _bulildBGroupFeild()),
-                                ElevatedButton(
-                                    child: Text('Submit'),
-                                    onPressed: () {
-                                      CircularProgressIndicator();
-                                      return isValid();
-                                    })
+                                if (widget._isLoadin)
+                                  CircularProgressIndicator(),
+                                if (!widget._isLoadin)
+                                  ElevatedButton(
+                                      child: Text('Submit'),
+                                      onPressed: () {
+                                        CircularProgressIndicator();
+                                        return isValid();
+                                      })
                               ],
                             ),
                           )),

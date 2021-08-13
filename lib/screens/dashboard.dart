@@ -45,6 +45,9 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
+    setState(() {
+      _fetch();
+    });
     return FutureBuilder(
         future: _fetch(),
         builder: (context, futureSnapshot) {
@@ -53,6 +56,7 @@ class _DashboardState extends State<Dashboard> {
               child: CircularProgressIndicator(),
             );
           }
+
           return Scaffold(
             body: Container(
               width: double.infinity,

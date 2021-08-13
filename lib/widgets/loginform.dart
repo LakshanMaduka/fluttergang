@@ -41,7 +41,7 @@ class _LogingWidgetState extends State<LogingWidget> {
         decoration: backgroundImage(),
         child: Column(
           children: [
-            SizedBox(height: 50.h),
+            SizedBox(height: 20.h),
             Padding(
               padding: EdgeInsets.symmetric(
                 vertical: 20.h,
@@ -54,6 +54,11 @@ class _LogingWidgetState extends State<LogingWidget> {
                 ),
               ),
             ),
+            Text('Ceylon Blood Squad',
+                style: GoogleFonts.montserrat(
+                  color: Color.fromRGBO(13, 21, 41, 1),
+                  fontSize: 30.sp,
+                )),
             SizedBox(
               height: 20.h,
             ),
@@ -193,8 +198,6 @@ class _LogingWidgetState extends State<LogingWidget> {
                         ),
                         child: OutlinedButton(
                           onPressed: () {
-                            FirebaseMessaging.instance
-                                .subscribeToTopic('cylonebloodsquad');
                             Navigator.of(context).pushNamed('form');
                             // final provider = Provider.of<GoogleSignInProvider>(
                             //     context,
@@ -209,23 +212,15 @@ class _LogingWidgetState extends State<LogingWidget> {
                               side: BorderSide(
                                 color: Color.fromRGBO(255, 61, 92, 1),
                               )),
-                          child: Row(
-                            children: [
-                              FaIcon(
-                                FontAwesomeIcons.google,
-                                color: Color.fromRGBO(255, 61, 92, 1),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.fromLTRB(10.w, 0, 0, 0),
-                                child: Text(
-                                  "Register",
-                                  style: TextStyle(
-                                      fontSize: 15.sp,
-                                      color: Color.fromRGBO(255, 61, 92, 1),
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ],
+                          child: Padding(
+                            padding: EdgeInsets.fromLTRB(10.w, 0, 0, 0),
+                            child: Text(
+                              "Register",
+                              style: TextStyle(
+                                  fontSize: 20.sp,
+                                  color: Color.fromRGBO(255, 61, 92, 1),
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
