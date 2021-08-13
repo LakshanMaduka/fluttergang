@@ -26,7 +26,7 @@ class RegForm extends StatefulWidget {
 
 class _RegFormState extends State<RegForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  File? _pickedImage;
+
   String? _name;
   String? _email;
   // String? _city;
@@ -37,6 +37,7 @@ class _RegFormState extends State<RegForm> {
   String? _height;
   String? _weight;
   String? _bloodgroop;
+  File? _pickedImage;
 
   void isValid() {
     if (_pickedImage == null) {

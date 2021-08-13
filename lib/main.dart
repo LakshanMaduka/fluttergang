@@ -5,7 +5,6 @@ import 'package:bloodsquad/form/form_screen.dart';
 import 'package:bloodsquad/google_sign_in.dart';
 
 import 'package:bloodsquad/login.dart';
-import 'package:bloodsquad/onboard/onboard.dart';
 
 import 'package:bloodsquad/screens/home.dart';
 import 'package:bloodsquad/screens/news.dart';
@@ -39,9 +38,6 @@ void main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
   ));
-  WidgetsFlutterBinding.ensureInitialized();
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  isviewed = prefs.getInt('onBoard');
 
   runApp(MyHomePage());
 }
@@ -111,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Text('Something Went Wrong'),
                       );
                     } else {
-                      return isviewed != 0 ? OnBoard() : LoginPage();
+                      return LoginPage();
                     }
                   }),
             ),
