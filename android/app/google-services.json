@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "758954850809",
+    "project_id": "fluttergang-cd47d",
+    "storage_bucket": "fluttergang-cd47d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758954850809:android:f18fca7a6bf9446d842528",
+        "android_client_info": {
+          "package_name": "com.example.bloodsquad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "758954850809-sqtfommf03ao1pv39cdhtr2nj8tpimd1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvJbaO_PI5eWtwSxtoGXlAGoxEJzsye3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "758954850809-sqtfommf03ao1pv39cdhtr2nj8tpimd1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758954850809:android:a971d9bd97b9c653842528",
+        "android_client_info": {
+          "package_name": "com.example.fluttergang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "758954850809-mvsfeq6rk8fvk0jo2e44jar0mo3v98fm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fluttergang",
+            "certificate_hash": "c179d81c594c5b7030a2c42a7f62facf76b37bab"
+          }
+        },
+        {
+          "client_id": "758954850809-sqtfommf03ao1pv39cdhtr2nj8tpimd1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvJbaO_PI5eWtwSxtoGXlAGoxEJzsye3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "758954850809-sqtfommf03ao1pv39cdhtr2nj8tpimd1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
